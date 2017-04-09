@@ -72,7 +72,7 @@ body {
   border-radius: 2px;
   -webkit-box-shadow: none;
   box-shadow: none;
-  display:block;
+  display: inline-flex;
   opacity:0;
   -webkit-transition: all .45s;
      -moz-transition: all .45s;
@@ -80,7 +80,7 @@ body {
 }
 .mainmenu .dropdown-menu .active { 
   font-weight:bold;
-  color:white;
+  color: white;
   opacity: 0.5;
 }
 .mainmenu .open .dropdown-menu { 
@@ -88,9 +88,9 @@ body {
   opacity:.9;
 }
 .mainmenu .dropdown-menu a { 
-  padding:10px 10px;
-  margin:0;
-  color:white;
+  padding: 10px 10px;
+  margin: 0;
+  color: black;
   text-decoration: none;
   -webkit-border-radius: 2px;
      -moz-border-radius: 2px;
@@ -280,8 +280,30 @@ a:hover, a:active { color:#FFFFFF; text-decoration: underline; }
   margin-bottom: 20px;
 }
 
+.pic-container {
+  margin: 0 auto;
+  max-width: 500px;
+}
+.bio-pic {
+  width: 100%;
+}
+
 .bio-link {
   color: red;
+}
+
+.media-container {
+  width: 100%;
+}
+
+.presti-image {
+  min-height: 275px;
+}
+
+.presti-photo {
+  min-height: 275px;
+  max-width: 100%;
+  margin-bottom: 10px;
 }
 
 

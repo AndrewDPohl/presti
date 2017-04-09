@@ -27,14 +27,14 @@
       <div class="container">
         <div class="dropdown">
           <button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <!-- <a data-toggle="dropdown" href="#">Dropdown trigger</a> -->
           <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-            <li><a style="color:red;" href="#head" class="active">Home</a></li>
-            <li><a style="color:red;" href="#bio">Bio</a></li>
-            <li><a style="color:red;" href="#shows">Shows</a></li>
-            <li><a style="color:red;" href="#sounds">Sounds</a></li>
-            <li><a style="color:red;" href="#press">Press</a></li>
-            <li><a style="color:red;" href="#contact">Contact</a></li>
+            <li><a class="menu-item" href="#head">Home</a></li>
+            <li><a class="menu-item" href="#bio">Bio</a></li>
+            <li><a class="menu-item" href="#shows">Shows</a></li>
+            <!-- <li><a class="menu-item" href="#sounds">Sounds</a></li> -->
+            <li><a class="menu-item" href="#media">Media</a></li>
+            <li><a class="menu-item" href="#press">Press</a></li>
+            <li><a class="menu-item" href="#contact">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -50,9 +50,29 @@
 
             <h1 class="main_title">Anthony Presti</h1>
             <h2 class="main_subtitle">Music</h2>
+            
+            <div class="embed-responsive embed-responsive-4by3">
+              <iframe src="https://player.vimeo.com/video/206454228" width="560" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+              <p><a href="https://vimeo.com/206454228">Anthony Presti- Dreamland</a> from <a href="https://vimeo.com/anthonyprestimusic">Anthony Presti</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+            </div>
 
-            <iframe src="https://player.vimeo.com/video/206454228" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            <p><a href="https://vimeo.com/206454228">Anthony Presti- Dreamland</a> from <a href="https://vimeo.com/anthonyprestimusic">Anthony Presti</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6">
+                <div class="caption">
+                  <iframe id="myframe" style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=2807239237/size=large/bgcol=333333/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="http://anthonyprestimusic.bandcamp.com/album/existentialism">Existentialism by Anthony Presti</a></iframe>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <div class="caption">
+                  <iframe id="myframe" style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=1558080896/size=large/bgcol=333333/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="http://anthonyprestimusic.bandcamp.com/album/clarity-in-hindsight">Clarity in Hindsight by Anthony Presti</a></iframe>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <div class="caption">
+                  <iframe style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=630482394/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" seamless><a href="http://anthonyprestimusic.bandcamp.com/album/gods-ugly-teeth">God&#39;s Ugly Teeth by Anthony Presti</a></iframe>
+                </div>
+              </div>
+            </div>
             
       
           </div> <!-- /col -->
@@ -67,9 +87,14 @@
       
         <h2 class="main_title">Bio</h2>
         <div class="row">
-          <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">    
-            <p class="about_me_bio">
+          <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
+              <div class="pic-container">
+                <img class="bio-pic img-responsive" src="https://i.imgur.com/a15Jbqg.jpg"><br /><br />
+              </div>
+              <p class="about_me_bio">
               Indie alt-rock singer/songwriter Anthony Presti grew up in Seattle during the 1990’s where an explosive alternative and grunge rock scene was thriving. He moved continuously between suburbs until his teenage years, when he moved to the more rural setting of Sonoma County. Presti didn’t abandon his grunge roots as he joined a band, playing Nirvana covers until they started writing original material. After several tours and albums the band dismembered and Presti discovered his affinity for acoustic guitar. <br /><br />
+
+              <!-- <img class="bio-pic img-responsive" src="https://i.imgur.com/a15Jbqg.jpg"><br /><br /> -->
 
               His identity shifted as he buried himself in legends like Neil Young, Roy Orbison, the Beatles and the Band, and following suite of contemporary artists like Blind Pilot and The Avett Brothers. Eventually moving to San Francisco, a city full of diversity, Presti has emulated a sound indicative of the city he lives, a combination he describes as indie-folk-pop-rock. Presti is not only influenced by music, but his past, his surroundings and his travels, as he’s backpacked Europe and Asia, adventures that have greatly shaped his life. <br /><br />
 
@@ -102,52 +127,78 @@
 
         <div class="row">
           <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
-            <!-- <script type='text/javascript' src='http://widget.bandsintown.com/javascripts/bit_widget.js'></script><a href="https://www.bandsintown.com/Anthony%20Presti%20Music" class="bit-widget-initializer" data-artist="Anthony Presti Music" data-prefix="fbjs" data-display-limit="12">Anthony Presti Music Tour Dates</a> -->
             <a href="https://www.songkick.com/artists/6043209" class="songkick-widget" data-theme="light" data-track-button="on" data-detect-style="true" data-background-color="transparent">Anthony Presti tour dates</a>
-<script src="//widget.songkick.com/widget.js"></script>
+            <script src="//widget.songkick.com/widget.js"></script>
           </div>
         </div>
       </div>  
     </section>
 
-    <!-- Fifth (Sounds) section -->
-    <section class="section" id="sounds">
+    <!-- Fifth (Media) Section -->
+    <section class="section" id="media">
+      <div class="container media-container col-xs-12">
+        <h2 class="main_title">Media</h2>
+        
+        <!-- <div class="row col-xs-12"> -->
+          <div class="presti-photo col-xs-12 col-sm-6 col-lg-4 pull-left">
+            <img class="presti-image img-responsive" src="https://i.imgur.com/a15Jbqg.jpg">
+          </div>
+          <div class="presti-photo col-xs-12 col-sm-6 col-lg-4 pull-left">
+            <img class="presti-image img-responsive" src="https://i.imgur.com/399v31I.jpg">
+          </div>
+          <div class="presti-photo col-xs-12 col-sm-6 col-lg-4 pull-left">
+            <img class="presti-image img-responsive" src="https://i.imgur.com/5uvZ9z6.jpg">
+          </div>
+          <div class="presti-photo col-xs-12 col-sm-6 col-lg-4 pull-left">
+            <img class="presti-image img-responsive" src="https://i.imgur.com/OtljGDU.jpg">
+          </div>
+          <div class="presti-photo col-xs-12 col-sm-6 col-lg-4 pull-left">
+            <img class="presti-image img-responsive" src="https://i.imgur.com/GW1hAHw.jpg">
+          </div>
+          <div class="presti-photo col-xs-12 col-sm-6 col-lg-4 pull-left">
+            <img class="presti-image img-responsive" src="https://i.imgur.com/qIZjy05.jpg">
+          </div>
+        <!-- </div> -->
+      </div>
+    </section>
+
+    <!-- Sixth (Sounds) section -->
+    <!-- <section class="section" id="sounds">
       <div class="container">
       
         <h2 class="main_title">Albums</h2>
 
         <div class="row">
-          <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+          <div class="col-xs-12 col-sm-6">
             <div class="caption">
-              <iframe style="border: 0; width: 700px; height: 700px;" src="https://bandcamp.com/EmbeddedPlayer/album=2807239237/size=large/bgcol=333333/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="http://anthonyprestimusic.bandcamp.com/album/existentialism">Existentialism by Anthony Presti</a></iframe>
+              <iframe id="myframe" style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=2807239237/size=large/bgcol=333333/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="http://anthonyprestimusic.bandcamp.com/album/existentialism">Existentialism by Anthony Presti</a></iframe>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+          <div class="col-xs-12 col-sm-6">
             <div class="caption">
-              <iframe style="border: 0; width: 700px; height: 700px;" src="https://bandcamp.com/EmbeddedPlayer/album=1558080896/size=large/bgcol=333333/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="http://anthonyprestimusic.bandcamp.com/album/clarity-in-hindsight">Clarity in Hindsight by Anthony Presti</a></iframe>
+              <iframe id="myframe" style="border: 0; width: 350px; height: 350px;" src="https://bandcamp.com/EmbeddedPlayer/album=1558080896/size=large/bgcol=333333/linkcol=e99708/minimal=true/transparent=true/" seamless><a href="http://anthonyprestimusic.bandcamp.com/album/clarity-in-hindsight">Clarity in Hindsight by Anthony Presti</a></iframe>
             </div>
           </div>
         </div>
 
       </div>
-    </section>
+    </section> -->
 
-    <!-- Sixth (Contact) section -->
+    <!-- Seventh (Contact) section -->
     <section class="section" id="contact">
       <div class="container">
       
         <h2 class="main_title">Contact</h2>
-
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2 text-center">
-            <p class="lead">Booking: anthonyprestimusic@gmail.com</p>
-            <p class="lead">Feel free to email me, or drop me a line on Twitter!</p>
-            <p><b><a style="color:white;" href="mailto:anthonyprestimusic@gmail.com">anthonyprestimusic@gmail.com</a></b><br><br></p>
+            <p class="lead">Booking: <a style="color:white;" href="mailto:anthonyprestimusic@gmail.com">anthonyprestimusic@gmail.com</a></p>
+            <p class="lead">Feel free to email me, or follow me on any of these social media sites!</p>
+            <!-- <p><b><a style="color:white;" href="mailto:anthonyprestimusic@gmail.com">anthonyprestimusic@gmail.com</a></b><br><br></p> -->
             <ul class="list-inline list-social">
-              <li><a style="color:white;" href="https://www.twitter.com/PrestiAnthony" class="btn btn-link"><i class="fa fa-twitter fa-fw"></i> Twitter</a></li>
-              <li><a style="color:white;" href="https://www.facebook.com/aprestimusic" class="btn btn-link"><i class="fa fa-facebook fa-fw"></i> Facebook</a></li>
-              <li><a style="color:white;" href="https://www.youtube.com/user/dergefool" class="btn btn-link"><i class="fa fa-youtube fa-fw"></i> YouTube</a></li>
-              <li><a style="color:white;" href="https://www.instagram.com/anthonyprestimusic" class="btn btn-link"><i class="fa fa-instagram fa-fw"></i> Instagram</a></li>
+              <li><a style="color:white;" href="https://www.twitter.com/PrestiAnthony" class="btn btn-link" target="_blank"><i class="fa fa-twitter fa-fw"></i> Twitter</a></li>
+              <li><a style="color:white;" href="https://www.facebook.com/aprestimusic" class="btn btn-link" target="_blank"><i class="fa fa-facebook fa-fw"></i> Facebook</a></li>
+              <li><a style="color:white;" href="https://www.youtube.com/user/dergefool" class="btn btn-link" target="_blank"><i class="fa fa-youtube fa-fw"></i> YouTube</a></li>
+              <li><a style="color:white;" href="https://www.instagram.com/anthonyprestimusic" class="btn btn-link" target="_blank"><i class="fa fa-instagram fa-fw"></i> Instagram</a></li>
             </ul>
           </div>
         </div>
@@ -159,7 +210,7 @@
     <!-- Load js libs only when the page is loaded. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script src="assets/modern.js"></script>
+    <!-- <script src="assets/modern.js"></script> -->
     <!-- Custom template scripts -->
     <script src="assets/main.js"></script>
   </body>
