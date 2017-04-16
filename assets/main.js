@@ -6,7 +6,7 @@ var section_hide_time = 1300;
 var section_show_time = 1300;
 
 // jQuery stuff
-jQuery(document).ready(function($) {
+$(document).ready(function($) {
 
   // Switch section
   $(".menu-item", '.mainmenu').click(function() {
@@ -25,6 +25,11 @@ jQuery(document).ready(function($) {
   });   
 });
 
-document.getElementById('artarea').onload = function() {
-  alert('myframe is loaded');
-};
+
+$('.presti-photos').slick({
+  dots: true,
+  infinite: true,
+  speed: 500,
+  fade: true,
+  cssEase: 'linear'
+});

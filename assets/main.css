@@ -1,6 +1,6 @@
 html {
-  //background:#505D6E url(https://i.imgur.com/jxzJwH5.jpg) no-repeat center center fixed;
-  background-color: pink;
+  background:#505D6E url(http://i.imgur.com/dQk9XGP.jpg) no-repeat center center fixed;
+  //background-color: silver;
   min-height:100%;
   -webkit-background-size: cover;
      -moz-background-size: cover;
@@ -99,6 +99,12 @@ body {
 .mainmenu .dropdown-menu a:hover { 
   background:rgba(255,255,255,.1);
   padding:10px 8px 10px 12px;
+}
+
+@media (max-width: 414px) {
+  .mainmenu .dropdown-menu {
+    font-size: 15px;
+  }
 }
 
 
