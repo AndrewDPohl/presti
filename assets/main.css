@@ -146,7 +146,7 @@ a:hover, a:active { color:#FFFFFF; text-decoration: underline; }
 .main_title,
 .main_subtitle {
   color: white;
-  font-family: 'Wire One', Helvetica, Arial, sans-serif;
+  font-family: 'Cinzel', Helvetica, Arial, serif;
   font-weight: bold;
   font-size: 9em;
   margin-bottom: 15px;
@@ -169,7 +169,12 @@ a:hover, a:active { color:#FFFFFF; text-decoration: underline; }
   color:white;
 }
 
-.about_me_bio {
+.bio-container, .press-container, .shows-container {
+  background-color: gray;
+  opacity: 0.8;
+}
+
+.about_me_bio, .press-container p {
   color: white;
   margin: 0 auto;
   font-size: 1.4em;
@@ -300,6 +305,10 @@ a:hover, a:active { color:#FFFFFF; text-decoration: underline; }
 
 .media-container {
   width: 100%;
+}
+
+.item img {
+  margin: 0 auto;
 }
 
 .presti-image {
