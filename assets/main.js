@@ -1,26 +1,62 @@
-// global. currently active menu item 
-var current_item = 0;
+$(document).ready(function () {
+    //stick in the fixed 100% height behind the navbar but don't wrap it
+    $('#slide-nav.navbar-inverse').after($('<div class="inverse" id="navbar-height-col"></div>'));
+  
+    $('#slide-nav.navbar-default').after($('<div id="navbar-height-col"></div>'));  
 
-// few settings
-var section_hide_time = 1300;
-var section_show_time = 1300;
+    // Enter your ids or classes
+    var toggler = '.navbar-toggle';
+    var close = '.close';
+    var pagewrapper = '#page-content';
+    var navigationwrapper = '.navbar-header';
+    var menuwidth = '100%'; // the menu inside the slide menu itself
+    var slidewidth = '40%';
+    var menuneg = '-100%';
+    var slideneg = '-40%';
 
-// jQuery stuff
-$(document).ready(function($) {
+    $("#slide-nav").on("click", toggler, function (e) {
+        var selected = $(this).hasClass('slide-active');
 
-  // Switch section
-  $(".menu-item", '.mainmenu').click(function() {
-    if( ! $(this).hasClass('active') ) { 
-      current_item = this;
-      // close all visible divs with the class of .section
-      $('.section:visible').fadeOut( section_hide_time, function() { 
-        $('.menu-item', '.mainmenu').removeClass( 'active' );  
-        $(current_item).addClass( 'active' );
-        var new_section = $( $(current_item).attr('href') );
-        new_section.fadeIn( section_show_time );
-      });
-      $('.dropdown').removeClass('open');
-    }
-    return false;
-  });   
+        $('#slidemenu').stop().animate({
+            left: selected ? menuneg : '0px'
+        });
+
+        $('#navbar-height-col').stop().animate({
+            left: selected ? slideneg : '0px'
+        });
+
+        $(pagewrapper).stop().animate({
+            left: selected ? '0px' : slidewidth
+        });
+
+        $(navigationwrapper).stop().animate({
+            left: selected ? '0px' : slidewidth
+        });
+
+
+        $(this).toggleClass('slide-active', !selected);
+        $('#slidemenu').toggleClass('slide-active');
+
+
+        $('#page-content, .navbar, body, .navbar-header').toggleClass('slide-active');
+    });
+
+    var selected = '#slidemenu, #page-content, body, .navbar, .navbar-header';
+
+    $(window).on("resize", function () {
+      if ($(window).width() > 767 && $('.navbar-toggle').is(':hidden')) {
+        $(selected).removeClass('slide-active');
+      }
+    });
 });
+
+$(document).ready(function(){
+  $(".menu-btn").click(function(event){
+    event.preventDefault();
+    $("nav").toggleClass("menushow");
+  });
+});
+
+
+
+

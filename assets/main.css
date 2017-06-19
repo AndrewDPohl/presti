@@ -1,11 +1,5 @@
 html {
-  background:#505D6E url(http://i.imgur.com/dQk9XGP.jpg) no-repeat center center fixed;
-  //background-color: silver;
-  min-height:100%;
-  -webkit-background-size: cover;
-     -moz-background-size: cover;
-       -o-background-size: cover;
-          background-size: cover;
+  
 }
 
 body {
@@ -25,87 +19,174 @@ body {
 /********************************************************/
 /*                    Navigation bar                    */
 /********************************************************/
-.mainmenu { z-index: 999999; width:100%;  padding: 30px 0 0 0;}
-@media (min-width: 768px) {
-  .mainmenu { position: fixed; }
+/* adjust body when menu is open */
+body.slide-active {
+    overflow-x: hidden
 }
 
-.navbar-toggle {
-  position:relative;
-  float:left;
-  display:block;
-  padding: 9px 10px;
-  background: rgba(255, 255, 255, 0.2);
-  background-image: none;
-  border: 0 none;
-  top:0px; 
-  -webkit-border-radius: 2px;
-     -moz-border-radius: 2px;
-          border-radius: 2px;
-  outline: 0;
+/*first child of #page-content so it doesn't shift around*/
+.no-margin-top {
+    margin-top: 0px!important
+}
+/*wrap the entire page content but not nav inside this div if not a fixed top, don't add any top padding */
+#page-content {
+    position: relative;
+    padding-top: 50px;
+    left: 0;
+}
+#page-content.slide-active {
+    padding-top: 0
+}
+
+
+
+/* put toggle bars on the left :: not using button */
+#slide-nav .navbar-toggle {
+    cursor: pointer;
+    position: relative;
+    line-height: 0;
+    float: left;
+    margin: 0;
+    width: 30px;
+    height: 40px;
+    padding: 10px 0 0 0;
+    border: 0;
+    background: transparent;
+}
+/* icon bar prettyup - optional */
+#slide-nav .navbar-toggle > .icon-bar {
+    width: 100%;
+    display: block;
+    height: 3px;
+    margin: 5px 0 0 0;
+    background: white;
+    transition: all 0.2s;
+}
+
+#slide-nav .navbar-toggle.slide-active  > .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+
+#slide-nav .navbar-toggle.slide-active  > .middle-bar {
+  opacity: 0;
+}
+
+#slide-nav .navbar-toggle.slide-active  > .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+}
+
+#slide-nav .navbar-toggle.slide-active .icon-bar {
+    background: orange
+}
+
+#slide-nav .navbar-toggle .top-bar {
+  transform: rotate(0);
+}
+
+#slide-nav .navbar-toggle .middle-bar {
   opacity: 1;
-  -webkit-transition: all .45s;
-     -moz-transition: all .45s;
-          transition: all .45s;
-          float: left;
-}
-.navbar-toggle .icon-bar {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: #fff;
-}
-.navbar-toggle .icon-bar + .icon-bar {
-  margin-top: 4px;
-}
-.open .navbar-toggle { 
-  top:-70px; 
-  opacity: .5;  
-}
-.mainmenu .dropdown-menu {
-  top: -14em;
-  left: 0px;
-  font-size: 18px;
-  padding:0;
-  background:none;
-  border:0 none;
-  border-radius: 2px;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  display: inline-flex;
-  opacity:0;
-  -webkit-transition: all .45s;
-     -moz-transition: all .45s;
-          transition: all .45s;
-}
-.mainmenu .dropdown-menu .active { 
-  font-weight:bold;
-  color: white;
-  opacity: 0.5;
-}
-.mainmenu .open .dropdown-menu { 
-  top:2px;
-  opacity:.9;
-}
-.mainmenu .dropdown-menu a { 
-  padding: 10px 7px;
-  margin: 0;
-  color: black;
-  text-decoration: none;
-  -webkit-border-radius: 2px;
-     -moz-border-radius: 2px;
-          border-radius: 2px;
-}
-.mainmenu .dropdown-menu a:hover { 
-  background:rgba(255,255,255,.1);
-  padding:10px 8px 10px 12px;
 }
 
-@media (max-width: 414px) {
-  .mainmenu .dropdown-menu {
-    font-size: 15px;
+#slide-nav .navbar-toggle .bottom-bar {
+  transform: rotate(0);
+}
+
+.navbar-header {
+    position: relative
+}
+/* un fix the navbar when active so that all the menu items are accessible */
+.navbar.navbar-fixed-top.slide-active {
+    position: relative
+}
+
+/* screw writing importants and shit, just stick it in max width since these classes are not shared between sizes */
+@media (max-width:767px) { 
+  #slide-nav .container {
+      margin: 0!important;
+      padding: 0!important;
+      height:100%;
+  }
+  #slide-nav .navbar-header {
+      margin: 0 auto;
+      padding: 0 15px;
+  }
+  #slide-nav .navbar.slide-active {
+      position: fixed;
+      width: 40%;
+      top: -1px;
+      z-index: 1000;
+  }
+  #slide-nav #slidemenu {
+      background: #f7f7f7;
+      left: -100%;
+      width: 40%;
+      min-width: 0;
+      position: fixed;
+      padding-left: 0;
+      z-index: 2;
+      top: -8px;
+      margin: 0;
+  }
+  #slide-nav #slidemenu .navbar-nav {
+      min-width: 0;
+      width: 100%;
+      margin: 0;
+  }
+  #slide-nav #slidemenu .navbar-nav .dropdown-menu li a {
+      min-width: 0;
+      width: 40%;
+      white-space: normal;
+  }
+  #slide-nav {
+      border-top: 0;
+      position: fixed;
+  }
+  #slide-nav.navbar-inverse #slidemenu {
+      background: #333
+  }
+  /* this is behind the navigation but the navigation is not inside it so that the navigation is accessible and scrolls*/
+  #navbar-height-col {
+      position: fixed;
+      top: 0;
+      height: 100%;
+      bottom:0;
+      width: 40%;
+      left: -40%;
+      background: #333;
+  }
+  #navbar-height-col.inverse {
+      background: #333;
+      z-index: 1;
+      border: 0;
+  }
+  #slide-nav .navbar-form {
+      width: 100%;
+      margin: 8px 0;
+      text-align: center;
+      overflow: hidden;
+      /*fast clearfixer*/
+  }
+  #slide-nav .navbar-form .form-control {
+      text-align: center
+  }
+  #slide-nav .navbar-form .btn {
+      width: 100%
   }
 }
+@media (min-width:768px) { 
+  #page-content {
+      left: 0!important
+  }
+  .navbar.navbar-fixed-top.slide-active {
+      position: fixed
+  }
+  .navbar-header {
+      left: 0!important
+  }
+}
+
 
 
 
@@ -113,17 +194,37 @@ body {
 /*             Sections - universal classes             */
 /********************************************************/
 .section { 
-  z-index: 1;
-  min-height:420px;
-  width: 100%; 
-  overflow:auto;
-  height:100%;
-  padding-bottom:50px; 
-  display:none;
-  top:0;
-} 
+  min-height: 100vh;
+  padding-top: 10px;
+  padding-bottom: 20px; 
+}
+
 @media (min-width: 768px) {
-  .section { padding-top:50px;}
+  .section { 
+    padding-top:50px;
+  }
+}
+
+#head, #sounds, #shows, #contact {
+  background:#505D6E url(http://i.imgur.com/dQk9XGP.jpg) no-repeat center center fixed;
+  /*min-height:100%;*/
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+}
+
+#bio {
+  background-color: #E4ECD7;
+  padding-bottom: 10px;
+}
+
+#media {
+  background-color: #D9ECD7;
+}
+
+#press {
+  background-color: #D7E4EC;
 }
 
 /* Show one of sections */
@@ -131,11 +232,15 @@ body {
   display: block;
 }
 
+#myCarousel>.carousel-inner {
+  max-height: 500px;
+}
+
 
 /********************************************************/
 /*                      Typography                      */
 /********************************************************/
-a { color: white; text-decoration: none; }
+a { color: white; text-decoration: none; font-size: 20px; }
 a:hover, a:active { color:#FFFFFF; text-decoration: underline; }
 .lead { 
   font-weight:normal;
@@ -148,7 +253,7 @@ a:hover, a:active { color:#FFFFFF; text-decoration: underline; }
   color: white;
   font-family: 'Cinzel', Helvetica, Arial, serif;
   font-weight: bold;
-  font-size: 9em;
+  font-size: 4em;
   margin-bottom: 15px;
   line-height: 1em;
   text-align: center;
@@ -156,9 +261,9 @@ a:hover, a:active { color:#FFFFFF; text-decoration: underline; }
 
 .main_subtitle { 
   line-height:.9em;
-  font-size:5.5em;
   margin-top:0;
-  margin-bottom:40px; 
+  margin-bottom:40px;
+  color: pink; 
 }
 
 .main_tagline {
@@ -169,9 +274,10 @@ a:hover, a:active { color:#FFFFFF; text-decoration: underline; }
   color:white;
 }
 
-.bio-container, .press-container, .shows-container {
-  background-color: gray;
-  opacity: 0.8;
+.bio-container, .press-container, .contact-container {
+  background-color: #B1AFA1;
+  /*opacity: 0.8;*/
+  padding: 10px;
 }
 
 .about_me_bio, .press-container p {
@@ -180,6 +286,10 @@ a:hover, a:active { color:#FFFFFF; text-decoration: underline; }
   font-size: 1.4em;
   line-height: 1.3em;
   font-weight: normal;
+}
+
+.press-author {
+  color: #D7D9EC;
 }
 
 .about_me_tag {
@@ -336,32 +446,6 @@ a:hover, a:active { color:#FFFFFF; text-decoration: underline; }
   width: 100%;
   height: 100%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /***********************************************************/
