@@ -221,7 +221,7 @@ body.slide-active {
           background-size: cover;
 }
 
-#bio, #media, #press, #social {
+#bio, #images, #press, #social {
   background-color: #B0AFA1;
 }
 
@@ -229,7 +229,7 @@ body.slide-active {
   padding-bottom: 10px;
 }
 
-/*#media {
+/*#images {
   background-color: #B0AFA1;
 }
 
