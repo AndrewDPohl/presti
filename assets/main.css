@@ -256,6 +256,7 @@ a:hover, a:active { color:#FFFFFF; text-decoration: underline; }
   font-weight:normal;
   font-size:1.5em;
   line-height:1.2em;
+  color: red;
 }
 
 .main_title,
@@ -306,10 +307,6 @@ a:hover, a:active { color:#FFFFFF; text-decoration: underline; }
 }
 
 .about_me_tag {
-  color: white;
-}
-
-.lead {
   color: white;
 }
 
@@ -389,10 +386,12 @@ a:hover, a:active { color:#FFFFFF; text-decoration: underline; }
 
 .list-social .btn { 
   font-size:1.3em;
-  color: white; 
+  color: red; 
 }
+
 .list-social .btn:hover, .list-social .btn:active, .list-social .btn:focus { 
-  text-decoration: none; 
+  text-decoration: none;
+  color: red; 
 }
 
 
